@@ -1,14 +1,17 @@
 <!doctype html>
 <head>
     <title>Hello Azure - Python Quickstart</title>
-    <script>window.top.location.href = "http://174.129.189.241" + window.location.search;</script>
+    <script>
+            function refreshFrame() {
+                    document.getElementById('pFrame').src = "http://174.129.189.241" + window.location.search;
+
+            }
+    </script>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 <html>
-   <body>
-     <main>
-      <p>Redirecting to Okta</p>
-     </main>      
+   <body onload="refreshFrame();">
+           <iframe id="pFrame" style="width: 100%; height: 100%; border: 0"></iframe>
    </body>
 </html>
